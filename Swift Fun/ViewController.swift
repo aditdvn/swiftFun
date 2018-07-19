@@ -10,12 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
    
-    var buttonCount = 0
+    //var buttonCount = 0
     @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
     
+    @IBOutlet weak var additionSwitch: UISwitch!
     
     @IBAction func buttonTapped(_ sender: Any) {
         
+        let addition = additionSwitch.isOn
+        
+        if addition {
+            let sum = Double(topTextField.text!)! + Double(bottomTextField.text!)!
+            
+            myLabel.text = "\(topTextField.text!) + \(bottomTextField.text!) = \(sum)"
+        }else{
+            let difference = Double(topTextField.text!)! - Double(bottomTextField.text!)!
+            
+            myLabel.text = "\(topTextField.text!) - \(bottomTextField.text!) = \(difference)"
+        }
+        
+      
+ 
+        
+        
+        
+       /*
         buttonCount += 1
         
         print("You have hit me \(buttonCount) times!")
@@ -24,19 +45,19 @@ class ViewController: UIViewController {
         
         view.backgroundColor = UIColor.red
         
-        myLabel.text = "You have hit me 10 times!"
+        myLabel.text = "You have hit me \(buttonCount) times!"
         }
         if buttonCount >= 20 {
             
             view.backgroundColor = UIColor.green
             
-            myLabel.text = "You have hit me 20 times!"
+            myLabel.text = "You have hit me \(buttonCount) times!"
         }
         if buttonCount >= 30 {
             
             view.backgroundColor = UIColor.blue
             
-            myLabel.text = "You have hit me 30 times!"
+            myLabel.text = "You have hit me \(buttonCount) times!"
         }
         if buttonCount >= 40 {
             
@@ -78,10 +99,12 @@ class ViewController: UIViewController {
             
             view.backgroundColor = UIColor.white
             
-            myLabel.text = " YOU HAVE NOW HIT ME 100 TIMES! "
+            myLabel.text = " YOU HAVE NOW HIT ME \(buttonCount) TIMES! "
         }
+        */
+        
     }
-    
+ 
     
     
     
